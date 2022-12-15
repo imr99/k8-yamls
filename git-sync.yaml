@@ -4,7 +4,7 @@ metadata:
   name: mani
   namespace: mani
   labels:
-    name: gitrepo-volume-pod
+    name: mani
 spec:
   containers:
   - image: nginx:latest
@@ -13,7 +13,7 @@ spec:
       - containerPort: 80
         protocol: TCP
     volumeMounts:
-    - name: html
+    - name: html            # changes committed in code will be reflected in code.
       mountPath: /usr/share/nginx/
 
   - name: git-sync
@@ -23,7 +23,7 @@ spec:
           mountPath: /tmp/git/
     env:
         - name: GIT_SYNC_REPO
-          value: https://github.com/mavrick202/dockertest1.git
+          value: https://github.com/imr99/ecomm.git
         - name: GIT_SYNC_BRANCH
           value: master
         - name: GIT_SYNC_DEST

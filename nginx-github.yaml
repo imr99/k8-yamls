@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: mypod
   namespace: mani
-  labels:
+  labels:           #changes commited in code will not be reflected in application.
     app: mani
 spec:
   containers:
@@ -15,6 +15,6 @@ spec:
   volumes:
      - name: testvol
        gitRepo:
-         repository: https://github.com/mavrick202/dockertest1.git
+         repository: https://github.com/imr99/ecomm.git
          revision: master
          directory: .

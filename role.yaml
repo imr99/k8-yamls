@@ -1,0 +1,11 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: mani
+  name: pod-reader
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  #api-group will be get from api-resources
+  resources: ["pods"]  #resources are to be selected from api-group.
+  verbs: ["get", "watch", "list"]   #actions to be performed
+  

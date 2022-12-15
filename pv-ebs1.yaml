@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: aws-pv1
+  namespace: mani
+  labels:
+    type: aws-pv1
+spec:
+  storageClassName: io1
+  persistentVolumeReclaimPolicy: Retain
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  awsElasticBlockStore:
+    volumeID: vol-0e786db7dcbd96383
+    fsType: ext4
