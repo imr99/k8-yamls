@@ -21,11 +21,11 @@ spec:
       - image: imr99/ecomm
         name: mani
         imagePullPolicy: Always
-        volumeMounts:
-        - name: html
-          mountPath: /usr/share/nginx/html/
-      volumes:
+      volumeMounts:
       - name: html
-        awsElasticBlockStore:
-           volumeID: vol-0e786db7dcbd96383
-           fsType: ext4
+        mountPath: /usr/share/nginx/html/
+      volumes:
+        - name: html
+      awsElasticBlockStore:
+        volumeID: vol-0e786db7dcbd96383
+        fsType: ext4

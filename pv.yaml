@@ -1,17 +1,37 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: aws-pv1
-  namespace: mani
+  name: aws-ebs-medium
+  #namespace: mani
   labels:
-    type: aws-pv1
+    type: aws-ebs-medium
 spec:
-  storageClassName: gp2
+  storageClassName: medium
   persistentVolumeReclaimPolicy: Delete
   capacity:
     storage: 2Gi
   accessModes:
   - ReadWriteOnce
   awsElasticBlockStore:
-    volumeID: vol-014568c9b00d48556
+    volumeID: vol-05ec1323423a666db
+    fsType: ext4
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: aws-ebs-high
+  #namespace: mani
+  labels:
+    type: aws-ebs-high
+spec:
+  storageClassName: high
+  persistentVolumeReclaimPolicy: Delete
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  awsElasticBlockStore:
+    volumeID: vol-0c79da919785f3dc7
     fsType: ext4
